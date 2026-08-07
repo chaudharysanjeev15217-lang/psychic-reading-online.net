@@ -171,6 +171,22 @@ h3{font-size:22px;line-height:1.3}
 .format-price{color:var(--gold);font-size:13px;letter-spacing:.12em;text-transform:uppercase}
 @media(max-width:880px){.formats-grid{grid-template-columns:1fr}.formats{padding:64px 0}}
 
+/* === WHY ONLINE === */
+.why{background:var(--white);padding:110px 0}
+.why .section-head h2{color:var(--text)}
+.why .section-head p{color:var(--text-light)}
+.why-intro{max-width:760px;margin:0 auto 56px;text-align:left}
+.why-intro p{color:var(--text-light);font-size:16px;margin:0 0 20px}
+.why-intro p:last-child{margin-bottom:0}
+.why-intro a{color:var(--teal);border-bottom:1px solid var(--gold);padding-bottom:1px}
+.why-intro a:hover{color:var(--gold-soft)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.why-item{background:var(--cream);border:1px solid var(--cream-dim);border-radius:4px;padding:32px 28px}
+.why-item h3{font-size:19px;margin-bottom:10px;color:var(--teal)}
+.why-item p{font-size:15px;color:var(--text-light);margin:0}
+@media(max-width:880px){.why-grid{grid-template-columns:1fr}.why{padding:64px 0}}
+@media(max-width:580px){.why-item{padding:26px 22px}}
+
 /* === READERS === */
 .readers{background:var(--cream);padding:110px 0}
 .readers .section-head h2{color:var(--text)}
@@ -212,6 +228,25 @@ h3{font-size:22px;line-height:1.3}
 .how-step p{font-size:14px;color:rgba(245,240,232,.6);margin:0;padding:0 6px}
 @media(max-width:880px){.how-row{grid-template-columns:repeat(2,1fr)}.how-row::before{display:none}.how{padding:64px 0}}
 
+/* === WHAT TO BRING === */
+.ask{background:var(--cream);padding:110px 0}
+.ask .section-head h2{color:var(--text)}
+.ask .section-head p{color:var(--text-light)}
+.ask-intro{max-width:760px;margin:0 auto 56px;text-align:left}
+.ask-intro p{color:var(--text-light);font-size:16px;margin:0 0 20px}
+.ask-intro p:last-child{margin-bottom:0}
+.ask-cols{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:40px}
+.ask-col{background:#fff;border:1px solid var(--cream-dim);border-radius:4px;padding:32px 30px}
+.ask-col h4{font-family:'Bitter',serif;font-size:16px;letter-spacing:.04em;text-transform:uppercase;color:var(--teal);margin:0 0 18px;font-weight:600}
+.ask-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.ask-col li{font-size:15px;color:var(--text-light);padding-left:20px;position:relative}
+.ask-col li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.ask-note{max-width:760px;margin:0 auto;text-align:left;font-size:14px;color:var(--text-light);border-top:1px solid var(--cream-dim);padding-top:28px}
+.ask-note a{color:var(--teal);border-bottom:1px solid var(--gold);padding-bottom:1px}
+.ask-note a:hover{color:var(--gold-soft)}
+@media(max-width:880px){.ask-cols{grid-template-columns:1fr}.ask{padding:64px 0}}
+@media(max-width:580px){.ask-col{padding:26px 24px}.ask{padding:56px 0}}
+
 /* === TESTIMONIAL SLAB === */
 .testimonial{
   background:linear-gradient(135deg,var(--teal) 0%,var(--teal-dark) 100%);
@@ -238,6 +273,20 @@ h3{font-size:22px;line-height:1.3}
 .insight p{font-size:14px;color:var(--text-light);margin:0;flex:1}
 @media(max-width:880px){.insights-grid{grid-template-columns:1fr}.insights{padding:64px 0}}
 
+/* === QUESTIONS WE GET ASKED === */
+.qa{background:var(--teal);color:var(--cream);padding:110px 0}
+.qa .section-head h2{color:var(--cream)}
+.qa-list{display:flex;flex-direction:column;gap:0;max-width:880px;margin:0 auto}
+.qa-item{padding:28px 0;border-bottom:1px solid rgba(212,168,67,.2)}
+.qa-item:first-child{padding-top:0}
+.qa-item:last-child{border-bottom:0;padding-bottom:0}
+.qa-item h3{font-size:19px;color:var(--gold);margin-bottom:10px;font-weight:500}
+.qa-item p{font-size:15px;color:rgba(245,240,232,.75);margin:0}
+.qa-item p a{color:var(--cream);border-bottom:1px solid var(--gold);padding-bottom:1px}
+.qa-item p a:hover{color:var(--gold)}
+@media(max-width:880px){.qa{padding:64px 0}}
+@media(max-width:580px){.qa{padding:56px 0}.qa-item{padding:22px 0}}
+
 /* === FINAL CTA === */
 .final{background:var(--teal-dark);color:var(--cream);padding:110px 0;text-align:center;position:relative;overflow:hidden}
 .final::before{content:'';position:absolute;inset:0;background-image:url('https://psychic-reading-online.net/wp-content/themes/pron-theme/assets/img/cta-bg.webp');background-size:cover;background-position:center;opacity:.18;mix-blend-mode:luminosity}
@@ -261,8 +310,6 @@ h3{font-size:22px;line-height:1.3}
 <title>Psychic Reading Online | Live &amp; Accurate Psychic Advice</title>
 <meta content="max-image-preview:large" name="robots">
 <link href="//fonts.googleapis.com" rel="dns-prefetch">
-<link href="https://psychic-reading-online.net/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fpsychic-reading-onlinenet.local%2F" rel="alternate" title="oEmbed (JSON)" type="application/json+oembed">
-<link href="https://psychic-reading-online.net/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fpsychic-reading-onlinenet.local%2F&amp;format=xml" rel="alternate" title="oEmbed (XML)" type="text/xml+oembed">
 <!-- SEO patch (WP-Net-Control) -->
 <meta content="Professional psychic readings online — accurate, private, on demand. Verified readers only. Chat, phone, or video — your choice. Private closed sessions." name="description">
 <meta content="website" property="og:type">
@@ -310,12 +357,10 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 :root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
 /*# sourceURL=global-styles-inline-css */
 </style>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;600;700&amp;family=Fira+Sans:wght@300;400;500;600;700&amp;display=swap" id="pron-fonts-css" media="all" rel="stylesheet"/>
-<link href="https://psychic-reading-online.net/wp-content/themes/pron-theme/style.css?ver=2.0.0" id="pron-style-css" media="all" rel="stylesheet"/>
-<link href="https://psychic-reading-online.net/wp-json/" rel="https://api.w.org/"/><link href="https://psychic-reading-online.net/wp-json/wp/v2/pages/5" rel="alternate" title="JSON" type="application/json"/><link href="https://psychic-reading-online.net/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/>
-<meta content="WordPress 7.0.1" name="generator"/>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;600;700&amp;family=Fira+Sans:wght@300;400;500;600;700&amp;display=swap" id="pron-fonts-css" media="all" rel="stylesheet">
+<link href="https://psychic-reading-online.net/wp-content/themes/pron-theme/style.css?ver=2.0.0" id="pron-style-css" media="all" rel="stylesheet">
+<meta content="WordPress 7.0.3" name="generator"/>
 <link href="https://psychic-reading-online.net/" rel="canonical"/>
-<link href="https://psychic-reading-online.net/" rel="shortlink"/>
 <link href="https://psychic-reading-online.net/wp-content/uploads/2026/03/site_26_favicon.png" rel="icon" sizes="32x32"/>
 <link href="https://psychic-reading-online.net/wp-content/uploads/2026/03/site_26_favicon.png" rel="icon" sizes="192x192"/>
 <link href="https://psychic-reading-online.net/wp-content/uploads/2026/03/site_26_favicon.png" rel="apple-touch-icon"/>
@@ -394,7 +439,7 @@ body.wp-theme-pron-theme .pro-gold-divider{height:2px;background:linear-gradient
 @media(max-width:600px){body.wp-theme-pron-theme .wp-element-button,body.wp-theme-pron-theme .wp-block-button__link{width:100%;text-align:center;display:block}body.wp-theme-pron-theme .wp-block-cover{min-height:450px}}
 @media(prefers-reduced-motion:reduce){body.wp-theme-pron-theme *{transition-duration:0.01ms!important}}
 </style>
-</meta></meta></link></link></link></meta></head>
+</link></link></meta></meta></link></meta></head>
 <body class="home wp-singular page-template-default page page-id-5 wp-theme-pron-theme pron-landing">
 <header class="nav">
 <div class="nav-inner">
@@ -503,6 +548,34 @@ body.wp-theme-pron-theme .pro-gold-divider{height:2px;background:linear-gradient
 </div>
 </div>
 </section>
+<!-- 3.5 WHY ONLINE -->
+<section class="why">
+<div class="container">
+<div class="section-head">
+<span class="eyebrow">Why Online</span>
+<h2>Reading online, without the theatre.</h2>
+</div>
+<div class="why-intro">
+<p>An online reading is a real conversation with a real person, carried over chat, phone, or video instead of across a table. Nothing about the format changes what happens once you're in the session: you bring what's on your mind, your reader responds, and you decide how long to stay. If it isn't working for you, you can end the session any time. Nothing holds you in the chair, and there's no travel to plan around.</p>
+<p>Every conversation runs over an encrypted connection, so what you say stays between you and your reader. You don't need to clear an evening or leave the house. A session fits into a lunch break or a quiet hour at home just as well as a Saturday afternoon. And once it's over, nothing disappears: your transcripts and notes stay in your account, so you can reread a line that mattered later, without having to trust your own memory of exactly how it was worded.</p>
+<p>Curious who you'd actually be talking to? Read how we screen and manage <a href="https://psychic-reading-online.net/our-readers/">our readers</a>, or see <a href="https://psychic-reading-online.net/about/">how the whole thing got started</a> if you want the longer version.</p>
+</div>
+<div class="why-grid">
+<div class="why-item">
+<h3>Privacy by default</h3>
+<p>Your sessions run on an encrypted connection and stay tied to your account. Nobody else who reads with us can see your history, and you choose what to keep.</p>
+</div>
+<div class="why-item">
+<h3>Readers who are screened first</h3>
+<p>Nobody joins the roster untested. Readers go through a review before they take a single paying session, and they stay on only if real sessions hold up.</p>
+</div>
+<div class="why-item">
+<h3>Built around your question</h3>
+<p>There's no script to sit through. A reader works from what you actually bring in, not a routine every client on the roster hears the same way.</p>
+</div>
+</div>
+</div>
+</section>
 <!-- 4. OUR READERS -->
 <section class="readers">
 <div class="container">
@@ -562,6 +635,41 @@ body.wp-theme-pron-theme .pro-gold-divider{height:2px;background:linear-gradient
 </div>
 </div>
 </section>
+<!-- 5.5 WHAT TO BRING -->
+<section class="ask">
+<div class="container">
+<div class="section-head">
+<span class="eyebrow">Before You Book</span>
+<h2>What to bring to your session.</h2>
+</div>
+<div class="ask-intro">
+<p>The questions that get the most out of a reading tend to be open ones. Something like "what should I watch for in this relationship" gives a reader more to work with than "will he call me back," and you'll usually walk away with more than a flat yes or no.</p>
+<p>It also helps to pick one topic and stay with it, rather than jumping from your career to your family to a decision you made last week. Bring the context that actually matters, names, dates, what's already happened, instead of holding facts back to test your reader. A reading works better as a conversation than as a quiz, and a reader can go deeper on one thread than on five shallow ones.</p>
+</div>
+<div class="ask-cols">
+<div class="ask-col">
+<h4>Works well</h4>
+<ul>
+<li>What should I focus on in my career right now?</li>
+<li>What patterns keep showing up in my relationships?</li>
+<li>What does this next chapter look like for me?</li>
+<li>How can I approach this decision with more clarity?</li>
+<li>What do I need to let go of to move forward?</li>
+</ul>
+</div>
+<div class="ask-col">
+<h4>Better asked elsewhere</h4>
+<ul>
+<li>Medical diagnoses or symptoms</li>
+<li>Legal decisions and contracts</li>
+<li>Investment or financial moves</li>
+<li>Anything that needs a licensed professional</li>
+</ul>
+</div>
+</div>
+<p class="ask-note">Readings are meant for guidance and reflection. They aren't a substitute for advice from a doctor, lawyer, or financial professional, and no reader can promise a specific outcome. If you're not sure whether a question fits, our <a href="https://psychic-reading-online.net/faq/">FAQ</a> covers it, or you can <a href="https://psychic-reading-online.net/book-a-reading/">book a reading</a> and ask your reader directly how they'd frame it.</p>
+</div>
+</section>
 <!-- 6. TESTIMONIAL -->
 <section class="testimonial">
 <div class="container">
@@ -605,6 +713,37 @@ body.wp-theme-pron-theme .pro-gold-divider{height:2px;background:linear-gradient
 </div>
 </div>
 </section>
+<!-- 7.5 QUESTIONS WE GET ASKED -->
+<section class="qa">
+<div class="container">
+<div class="section-head">
+<span class="eyebrow">Questions We Get Asked</span>
+<h2>Questions we get asked.</h2>
+</div>
+<div class="qa-list">
+<div class="qa-item">
+<h3>How long should a first reading be?</h3>
+<p>Most first-time clients do fine with a shorter session, enough time to ask your main question and follow it where it goes, without committing to a full hour before you know how the connection feels. You can extend a chat or phone session on the spot if it's going well, or book something longer once you've found a reader you trust. Our <a href="https://psychic-reading-online.net/pricing/">pricing</a> page breaks down cost by length.</p>
+</div>
+<div class="qa-item">
+<h3>What happens if the connection doesn't feel right?</h3>
+<p>End it. Every format lets you close a session whenever you want, and trying a different reader afterward costs you nothing but the time. Not every pairing clicks, and that's normal. A reading depends on fit as much as skill. If you're unsure who to try next, reach out through <a href="https://psychic-reading-online.net/contact/">contact</a> and we'll point you toward someone else.</p>
+</div>
+<div class="qa-item">
+<h3>Do I need to prepare anything before a session?</h3>
+<p>Not really. No forms, no printed birth chart, no memorized script, just have your question in mind and enough quiet that you can talk or type without getting interrupted. If you're booking a video session, decent lighting and a plain background help more than any list of prep. Our <a href="https://psychic-reading-online.net/video/">video</a> page covers the basics.</p>
+</div>
+<div class="qa-item">
+<h3>How does privacy and session records work?</h3>
+<p>Every session runs over an encrypted connection, and only you can see your own reading history. Chat transcripts and notes from phone or video sessions stay attached to your account so you can revisit them later; they're never visible to other readers or shared outside the platform. Our <a href="https://psychic-reading-online.net/faq/">FAQ</a> covers the details if you want more.</p>
+</div>
+<div class="qa-item">
+<h3>How does pricing work?</h3>
+<p>Each format bills by the minute at a rate shown before you connect, so there's no flat fee to commit to upfront. Watch the time as the session runs and end it whenever you've gotten what you needed. If you'd rather talk it through with a real person first, call through our <a href="https://psychic-reading-online.net/phone/">phone</a> line before you book.</p>
+</div>
+</div>
+</div>
+</section>
 <!-- 8. FINAL CTA -->
 <section class="final">
 <div class="container final-inner">
@@ -643,11 +782,11 @@ body.wp-theme-pron-theme .pro-gold-divider{height:2px;background:linear-gradient
 </script>
 <script id="pron-nav-js" src="https://psychic-reading-online.net/wp-content/themes/pron-theme/assets/js/navigation.js?ver=2.0.0"></script>
 <script id="wp-emoji-settings" type="application/json">
-{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://psychic-reading-online.net/wp-includes/js/wp-emoji-release.min.js?ver=7.0.1"}}
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://psychic-reading-online.net/wp-includes/js/wp-emoji-release.min.js?ver=7.0.3"}}
 </script>
 <script type="module">
 /*! This file is auto-generated */
-const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
+var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
 //# sourceURL=https://psychic-reading-online.net/wp-includes/js/wp-emoji-loader.min.js
 </script>
 </body>
