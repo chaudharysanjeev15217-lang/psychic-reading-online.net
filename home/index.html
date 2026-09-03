@@ -56,10 +56,10 @@ h3{font-size:22px;line-height:1.3}
   min-height:48px;
   white-space:nowrap;
 }
-.btn-gold{background:var(--gold);color:#061419}
-.btn-gold:hover{background:#f0ca77;color:#061419;transform:translateY(-1px);box-shadow:0 10px 28px rgba(231,189,99,.24)}
-.btn-ghost{background:rgba(6,20,25,.35);color:var(--cream);border-color:rgba(245,239,229,.55)}
-.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.btn-gold{background:var(--gold);color:#061419!important}
+.btn-gold:hover{background:#f0ca77;color:#061419!important;transform:translateY(-1px);box-shadow:0 10px 28px rgba(231,189,99,.24)}
+.btn-ghost{background:#f5efe5;color:#061419!important;border-color:#f5efe5;font-weight:700}
+.btn-ghost:hover{background:#fff;border-color:var(--gold);color:#061419!important}
 .btn-outline-teal{background:transparent;color:var(--teal);border-color:var(--teal)}
 .btn-outline-teal:hover{background:var(--teal);color:var(--cream)}
 
@@ -70,12 +70,12 @@ h3{font-size:22px;line-height:1.3}
   border-bottom:1px solid rgba(212,168,67,.15);
 }
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;max-width:1240px;margin:0 auto;gap:24px}
-.nav-brand{display:flex;align-items:center;gap:12px;color:var(--cream);font-family:'Bitter',serif;font-size:19px;font-weight:500}
+.nav-brand{display:flex;align-items:center;gap:12px;color:var(--cream)!important;font-family:'Bitter',serif;font-size:19px;font-weight:500}
 .nav-brand-mark{width:34px;height:34px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold)}
 .nav-brand-mark svg{width:18px;height:18px}
 .nav-links{display:flex;gap:30px;list-style:none;margin:0;padding:0}
-.nav-links a{color:var(--cream);font-size:14px;font-weight:400;opacity:.85;transition:opacity .2s,color .2s;padding-bottom:3px;border-bottom:1px solid transparent}
-.nav-links a:hover,.nav-links a.active{opacity:1;color:var(--gold);border-bottom-color:var(--gold)}
+.nav-links a{color:#fff!important;font-size:14px;font-weight:500;opacity:1;transition:color .2s;padding-bottom:3px;border-bottom:1px solid transparent}
+.nav-links a:hover,.nav-links a.active{opacity:1;color:var(--gold)!important;border-bottom-color:var(--gold)}
 .nav .btn{padding:11px 22px;font-size:11px}
 @media(max-width:880px){.nav-links{display:none}.nav-inner{padding:14px 20px}}
 
@@ -166,7 +166,7 @@ h3{font-size:22px;line-height:1.3}
 .formats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .format-card{
   position:relative;
-  background:rgba(10,61,61,.4);border:1px solid rgba(212,168,67,.25);
+  background:#103f42;border:1px solid rgba(231,189,99,.65);
   border-radius:4px;padding:40px 32px;text-align:left;
   transition:transform .3s,border-color .3s,box-shadow .3s;
 }
@@ -174,8 +174,8 @@ h3{font-size:22px;line-height:1.3}
 .format-icon{width:48px;height:48px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);margin-bottom:24px}
 .format-icon svg{width:22px;height:22px}
 .format-card h3{color:var(--cream);font-weight:500;margin-bottom:10px}
-.format-card p{color:rgba(245,239,229,.78);font-size:15px;margin:0 0 22px}
-.format-price{color:var(--gold);font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.format-card p{color:#fff;font-size:15px;margin:0 0 22px}
+.format-price{color:#f6d78f;font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
 @media(max-width:880px){.formats-grid{grid-template-columns:1fr}.formats{padding:64px 0}}
 
 /* === WHY ONLINE === */
@@ -210,8 +210,8 @@ h3{font-size:22px;line-height:1.3}
 .reader-card .rating .stars{color:var(--gold);letter-spacing:1px;margin-right:6px}
 .reader-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
 .reader-tags span{font-size:11px;padding:4px 10px;border:1px solid rgba(123,85,17,.36);color:#6b470b;background:#fff9ed;border-radius:999px;letter-spacing:.05em}
-.reader-link{display:inline-flex;align-items:center;justify-content:center;width:100%;min-height:42px;border-radius:999px;background:var(--teal);color:#fff;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:600;padding:10px 14px;border:1px solid var(--teal)}
-.reader-link:hover{background:var(--teal-darker);border-color:var(--gold);color:var(--gold)}
+.reader-link{display:inline-flex;align-items:center;justify-content:center;width:100%;min-height:44px;border-radius:999px;background:#0b3437;color:#fff!important;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:10px 14px;border:2px solid #0b3437}
+.reader-link:hover{background:var(--teal-darker);border-color:var(--gold);color:var(--gold)!important}
 @media(max-width:1080px){.readers-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:580px){.readers-grid{grid-template-columns:1fr}.readers{padding:64px 0}}
 
@@ -254,19 +254,6 @@ h3{font-size:22px;line-height:1.3}
 .ask-note a:hover{color:var(--gold-soft)}
 @media(max-width:880px){.ask-cols{grid-template-columns:1fr}.ask{padding:64px 0}}
 @media(max-width:580px){.ask-col{padding:26px 24px}.ask{padding:56px 0}}
-
-/* === TESTIMONIAL SLAB === */
-.testimonial{
-  background:linear-gradient(135deg,var(--teal) 0%,var(--teal-dark) 100%);
-  color:var(--cream);padding:110px 0;text-align:center;position:relative;
-}
-.testimonial-quote{font-family:'Bitter',serif;font-style:italic;font-size:clamp(22px,2.4vw,32px);line-height:1.4;max-width:860px;margin:0 auto;color:var(--cream);position:relative}
-.testimonial-quote::before{content:'\201C';position:absolute;top:-30px;left:50%;transform:translateX(-50%);font-size:90px;color:var(--gold);font-family:'Bitter',serif;line-height:1}
-.testimonial-meta{margin-top:32px;display:flex;justify-content:center;align-items:center;gap:14px;font-size:13px;color:rgba(245,240,232,.65);letter-spacing:.05em}
-.testimonial-meta strong{color:var(--gold);font-weight:500}
-.testimonial-dots{display:flex;justify-content:center;gap:8px;margin-top:48px}
-.testimonial-dots span{width:7px;height:7px;border-radius:50%;background:rgba(212,168,67,.3)}
-.testimonial-dots span.on{background:var(--gold);width:22px;border-radius:4px}
 
 /* === BLOG === */
 .insights{background:var(--cream);padding:110px 0}
@@ -315,6 +302,18 @@ h3{font-size:22px;line-height:1.3}
 .foot-bottom{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(245,239,229,.58);flex-wrap:wrap;gap:14px}
 .foot-lock{display:inline-flex;align-items:center;gap:8px;color:var(--gold);letter-spacing:.1em;font-size:11px;text-transform:uppercase}
 @media(max-width:980px){.foot-cols{grid-template-columns:1fr 1fr;gap:36px}.foot{padding:48px 0 24px}}
+@media(max-width:580px){
+  .container{padding:0 20px}
+  .nav-inner{gap:10px;padding:12px 16px}
+  .nav-brand{font-size:14px;white-space:nowrap}
+  .nav-brand-mark{display:none}
+  .nav .btn{min-height:42px;padding:10px 13px;font-size:10px;letter-spacing:.1em}
+  .hero-actions{display:grid;grid-template-columns:1fr}
+  .hero-actions .btn{justify-content:center;width:100%}
+  .format-card{padding:30px 24px}
+  .how-row{grid-template-columns:1fr}
+  .foot-cols{grid-template-columns:1fr}
+}
 </style>
 <title>Psychic Reading Online | Live & Accurate Psychic Advice</title>
 <meta name='robots' content='max-image-preview:large' />
@@ -517,7 +516,7 @@ body.wp-theme-pron-theme .pro-gold-divider{height:2px;background:linear-gradient
         <div class="hero-card-eyebrow">Featured Reader</div>
         <div class="hero-card-name">Isabelle Monroe</div>
         <div class="hero-card-role">Clairvoyant &amp; Tarot Specialist · 17 yrs</div>
-        <div class="hero-card-rating"><span class="stars">★★★★★</span> 4.9 · 5,200+ readings</div>
+        <div class="hero-card-rating"><span class="stars">★★★★★</span> 4.9 · 2,600+ readings</div>
         <div class="hero-card-avail"><span class="dot"></span>Available now · Avg wait 2 min</div>
       </aside>
     </div>
@@ -607,7 +606,7 @@ body.wp-theme-pron-theme .pro-gold-divider{height:2px;background:linear-gradient
         <div class="reader-card-img" style="background-image:url('https://psychic-reading-online.net/wp-content/themes/pron-theme/assets/img/reader-isabelle.webp')"></div>
         <h3>Isabelle Monroe</h3>
         <div class="role">Clairvoyant &amp; Tarot Specialist</div>
-        <div class="rating"><span class="stars">★★★★★</span>4.9 · 5,200+ readings</div>
+        <div class="rating"><span class="stars">★★★★★</span>4.9 · 2,600+ readings</div>
         <div class="reader-tags"><span>Relationships</span><span>Career</span><span>Timing</span></div>
         <a class="reader-link btn" href="https://asknebula.com/flow/lp/simple-simple-registration/quiz/gender?utm_source=reddit&utm_medium=share&utm_campaign=join_lp1" rel="nofollow sponsored">Start with Isabelle</a>
       </article>
@@ -615,7 +614,7 @@ body.wp-theme-pron-theme .pro-gold-divider{height:2px;background:linear-gradient
         <div class="reader-card-img" style="background-image:url('https://psychic-reading-online.net/wp-content/themes/pron-theme/assets/img/reader-nathan.webp')"></div>
         <h3>Nathan Cross</h3>
         <div class="role">Intuitive Energy Reader</div>
-        <div class="rating"><span class="stars">★★★★★</span>4.8 · 3,800+ readings</div>
+        <div class="rating"><span class="stars">★★★★★</span>4.8 · 1,900+ readings</div>
         <div class="reader-tags"><span>Life Path</span><span>Growth</span><span>Healing</span></div>
         <a class="reader-link btn" href="https://asknebula.com/flow/lp/simple-simple-registration/quiz/gender?utm_source=reddit&utm_medium=share&utm_campaign=join_lp1" rel="nofollow sponsored">Start with Nathan</a>
       </article>
@@ -623,7 +622,7 @@ body.wp-theme-pron-theme .pro-gold-divider{height:2px;background:linear-gradient
         <div class="reader-card-img" style="background-image:url('https://psychic-reading-online.net/wp-content/themes/pron-theme/assets/img/reader-diana.webp')"></div>
         <h3>Diana Vasquez</h3>
         <div class="role">Empathic Relationship Reader</div>
-        <div class="rating"><span class="stars">★★★★★</span>4.9 · 3,200+ readings</div>
+        <div class="rating"><span class="stars">★★★★★</span>4.9 · 1,600+ readings</div>
         <div class="reader-tags"><span>Romance</span><span>Family</span><span>Emotional Healing</span></div>
         <a class="reader-link btn" href="https://asknebula.com/flow/lp/simple-simple-registration/quiz/gender?utm_source=reddit&utm_medium=share&utm_campaign=join_lp1" rel="nofollow sponsored">Start with Diana</a>
       </article>
@@ -631,7 +630,7 @@ body.wp-theme-pron-theme .pro-gold-divider{height:2px;background:linear-gradient
         <div class="reader-card-img" style="background-image:url('https://psychic-reading-online.net/wp-content/themes/pron-theme/assets/img/reader-graham.webp')"></div>
         <h3>Graham Ellis</h3>
         <div class="role">Astrologer &amp; Psychic Advisor</div>
-        <div class="rating"><span class="stars">★★★★★</span>4.7 · 6,100+ readings</div>
+        <div class="rating"><span class="stars">★★★★★</span>4.7 · 3,000+ readings</div>
         <div class="reader-tags"><span>Career</span><span>Timing</span><span>Compatibility</span></div>
         <a class="reader-link btn" href="https://asknebula.com/flow/lp/simple-simple-registration/quiz/gender?utm_source=reddit&utm_medium=share&utm_campaign=join_lp1" rel="nofollow sponsored">Start with Graham</a>
       </article>
@@ -691,15 +690,6 @@ body.wp-theme-pron-theme .pro-gold-divider{height:2px;background:linear-gradient
   </div>
 </section>
 
-<!-- 6. TESTIMONIAL -->
-<section class="testimonial">
-  <div class="container">
-    <blockquote class="testimonial-quote">She told me about the call I was about to receive — the one from my brother I hadn't spoken to in four years. Forty‑eight hours later, the phone rang.</blockquote>
-    <div class="testimonial-meta"><strong>— S. M.</strong><span>Boston</span><span>Video reading · 60 min</span></div>
-    <div class="testimonial-dots"><span></span><span class="on"></span><span></span></div>
-  </div>
-</section>
-
 <!-- 7. BLOG TEASER -->
 <section class="insights">
   <div class="container">
@@ -709,7 +699,7 @@ body.wp-theme-pron-theme .pro-gold-divider{height:2px;background:linear-gradient
     </div>
     <div class="insights-grid">
                 <a class="insight" href="https://psychic-reading-online.net/black-tourmaline-meaning-and-uses/">
-            <div class="insight-thumb" style="background-image:url('')"></div>
+            <div class="insight-thumb" style="background-image:url('https://psychic-reading-online.net/wp-content/uploads/2026/06/black-tourmaline-meaning-and-uses_featured.png')"></div>
             <div class="insight-body">
               <div class="insight-meta">5 min read · Psychic Insights</div>
               <h3>Black Tourmaline Meaning and Uses for Protection</h3>
