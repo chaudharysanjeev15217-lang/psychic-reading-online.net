@@ -16,7 +16,7 @@ body{
   overflow:hidden;position:relative;
 }
 body::before{
-  content:'';position:fixed;top:-50%;left:-50%;width:200%;height:200%;pointer-events:none;
+  content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;
   background:radial-gradient(ellipse at 30% 20%,#D4A84344 0%,transparent 50%),
              radial-gradient(ellipse at 70% 80%,#F5F0E822 0%,transparent 50%);
   animation:drift 20s ease-in-out infinite alternate;z-index:0;

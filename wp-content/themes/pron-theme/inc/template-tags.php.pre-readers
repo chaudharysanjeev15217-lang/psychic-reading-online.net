@@ -1,0 +1,55 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) exit;
+
+/**
+ * Fallback menu for primary navigation.
+ * IMPORTANT: This is the ONLY place fallback_menu is defined. Never in functions.php.
+ */
+function pron_fallback_menu() {
+    $links = array(
+        array('label'=>'Book a Reading','href'=>home_url('/book-a-reading/')),
+        array('label'=>'Our Readers','href'=>home_url('/our-readers/')),
+        array('label'=>'Pricing','href'=>home_url('/pricing/')),
+        array('label'=>'Blog','href'=>home_url('/blog/')),
+        array('label'=>'About','href'=>home_url('/about/')),
+    );
+    echo '<ul class="nav-menu">';
+    foreach ( $links as $link ) {
+        printf( '<li><a href="%s" class="nav-link">%s</a></li>', esc_url( $link['href'] ), esc_html( $link['label'] ) );
+    }
+    echo '</ul>';
+}
+
+/**
+ * Stable site navigation shared by desktop and mobile internal-page headers.
+ */
+function pron_primary_navigation() {
+    $links = array(
+        array( 'label' => 'Readings', 'href' => home_url( '/book-a-reading/' ) ),
+        array( 'label' => 'Our Readers', 'href' => home_url( '/our-readers/' ) ),
+        array( 'label' => 'How It Works', 'href' => home_url( '/#how-it-works' ) ),
+        array( 'label' => 'Blog', 'href' => home_url( '/blog/' ) ),
+        array( 'label' => 'About', 'href' => home_url( '/about/' ) ),
+    );
+
+    echo '<ul class="nav-menu">';
+    foreach ( $links as $link ) {
+        printf( '<li><a href="%s" class="nav-link">%s</a></li>', esc_url( $link['href'] ), esc_html( $link['label'] ) );
+    }
+    echo '</ul>';
+}
+
+function pron_posted_on() {
+    printf( '<time class="entry-date" datetime="%1$s">%2$s</time>', esc_attr( get_the_date( 'c' ) ), esc_html( get_the_date() ) );
+}
+
+function pron_posted_by() {
+    printf( '<span class="byline">By <a href="%1$s">%2$s</a></span>', esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ), esc_html( get_the_author() ) );
+}
+
+function pron_reading_time() {
+    $content = get_post_field( 'post_content', get_the_ID() );
+    $word_count = str_word_count( strip_tags( $content ) );
+    $minutes = max( 1, ceil( $word_count / 250 ) );
+    printf( '<span class="reading-time">%d min read</span>', $minutes );
+}

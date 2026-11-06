@@ -1,0 +1,104 @@
+/* Сторінки спеціалістів, індекс /readers/ і оболонка AI Aura Reader. Токени — з теми pron-theme (teal / gold / cream). */
+.rp-main{background:var(--color-bg);color:var(--color-text)}
+.rp-main h1,.rp-main h2,.rp-main h3{color:var(--color-primary)}
+.rp-wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.rp-crumbs{max-width:1120px;margin:0 auto;padding:22px 24px 0;font-size:.85rem;color:var(--color-text-light)}
+.rp-crumbs a{color:var(--color-accent)}
+.rp-crumbs span{margin:0 8px;opacity:.6}
+.rp-eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:#7b5511;margin:0 0 12px}
+.rp-eyebrow::before{content:'';width:26px;height:1px;background:currentColor}
+
+/* hero профілю */
+.rp-hero{max-width:1120px;margin:0 auto;padding:34px 24px 56px}
+.rp-hero-grid{display:grid;grid-template-columns:260px 1fr;gap:48px;align-items:center}
+.rp-avatar{width:260px;height:260px;border-radius:18px;object-fit:cover;border:1px solid var(--color-secondary);padding:8px;background:#fff;box-shadow:var(--shadow-md)}
+.rp-hero h1{margin:0 0 6px}
+.rp-role{font-family:var(--font-heading);font-style:italic;color:var(--color-accent);font-size:1.15rem;margin:0 0 14px}
+.rp-tagline{font-size:1.12rem;max-width:620px;color:var(--color-text-light)}
+.rp-actions{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0 18px}
+.rp-actions .btn{white-space:nowrap}
+.rp-chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.rp-chips li{font-size:.76rem;padding:5px 12px;border:1px solid rgba(123,85,17,.36);background:#fff9ed;color:#6b470b;border-radius:999px;letter-spacing:.04em}
+.rp-archive{font-size:.9rem;margin-top:14px}
+.rp-archive a{color:var(--color-accent);text-decoration:underline;text-underline-offset:3px}
+
+/* секції */
+.rp-section{padding:64px 0}
+.rp-section.alt{background:var(--color-bg-alt)}
+.rp-section h2{margin:0 0 22px}
+.rp-two{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:start}
+.rp-two.flip{grid-template-columns:1fr 1.25fr}
+.rp-bio p{font-size:1.04rem}
+.rp-figure{margin:0}
+.rp-figure img{width:100%;height:auto;border-radius:16px;border:1px solid rgba(212,168,67,.55);box-shadow:var(--shadow-md);display:block}
+.rp-figure figcaption{font-size:.85rem;color:var(--color-text-light);margin-top:10px;font-style:italic}
+.rp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.rp-card{background:#fff;border:1px solid var(--color-border);border-top:3px solid var(--color-secondary);border-radius:12px;padding:22px}
+.rp-card h3{font-size:1.05rem;margin:0 0 8px}
+.rp-card p{font-size:.95rem;margin:0;color:var(--color-text-light)}
+.rp-list{margin:0;padding-left:1.1rem}
+.rp-list li{margin:0 0 8px;color:var(--color-text-light)}
+.rp-q li{font-family:var(--font-heading);font-style:italic;color:var(--color-primary);font-size:1.05rem}
+.rp-steps{list-style:none;counter-reset:s;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.rp-steps li{counter-increment:s;background:#fff;border:1px solid var(--color-border);border-radius:12px;padding:22px 20px 18px;position:relative}
+.rp-steps li::before{content:counter(s);display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:1px solid var(--color-secondary);color:#7b5511;font-family:var(--font-heading);margin-bottom:10px}
+.rp-steps h3{font-size:1.02rem;margin:0 0 6px}
+.rp-steps p{font-size:.93rem;margin:0;color:var(--color-text-light)}
+.rp-note{font-size:.88rem;color:var(--color-text-light);margin-top:20px;border-top:1px solid var(--color-border);padding-top:16px}
+.rp-faq details{background:#fff;border:1px solid var(--color-border);border-radius:10px;margin:0 0 10px;padding:0 18px}
+.rp-faq summary{cursor:pointer;padding:15px 0;font-weight:600;color:var(--color-primary);list-style:none;display:flex;justify-content:space-between;gap:14px}
+.rp-faq summary::-webkit-details-marker{display:none}
+.rp-faq summary::after{content:'+';color:#7b5511;font-size:1.2rem;line-height:1}
+.rp-faq details[open] summary::after{content:'\2212'}
+.rp-faq details p{margin:0 0 16px;color:var(--color-text-light);font-size:.98rem}
+.rp-others{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.rp-other{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--color-border);border-radius:12px;padding:12px 14px;color:var(--color-text)}
+.rp-other:hover{border-color:var(--color-secondary);box-shadow:var(--shadow-sm)}
+.rp-other img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:1px solid var(--color-secondary);flex:none}
+.rp-other strong{display:block;color:var(--color-primary);font-family:var(--font-heading)}
+.rp-other span{font-size:.84rem;color:var(--color-text-light);line-height:1.35;display:block}
+
+/* смуги CTA */
+.rp-ai-band{margin:0;padding:54px 24px;text-align:center;background:linear-gradient(135deg,#0b2630,#103f42);color:#f5efe5;position:relative;overflow:hidden}
+.rp-ai-band::before{content:'';position:absolute;inset:-40% 30% auto -10%;height:320px;background:radial-gradient(circle,rgba(231,189,99,.22),transparent 60%);pointer-events:none}
+.rp-ai-band h2{color:#f5efe5 !important;margin:0 0 10px;position:relative}
+.rp-ai-band p{max-width:640px;margin:0 auto 22px;color:rgba(245,239,229,.88);position:relative}
+.rp-ai-band .btn{position:relative}
+.rp-cta{text-align:center;padding:60px 24px;background:var(--color-bg-alt)}
+.rp-cta h2{margin:0 0 8px}
+.rp-cta p{max-width:560px;margin:0 auto 20px;color:var(--color-text-light)}
+
+/* індекс /readers/ */
+.rp-index-hero{max-width:820px;margin:0 auto;padding:34px 24px 36px;text-align:center}
+.rp-index-hero h1{margin:0 0 12px}
+.rp-index-hero p{color:var(--color-text-light);font-size:1.1rem}
+.rp-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.rp-rcard{background:linear-gradient(180deg,#fff,#fbf7ef);border:1px solid var(--color-border);border-radius:18px;padding:16px 16px 20px;text-align:left;transition:transform .25s,box-shadow .25s,border-color .25s;display:flex;flex-direction:column}
+.rp-rcard:hover{transform:translateY(-4px);box-shadow:0 18px 50px rgba(10,31,31,.14);border-color:rgba(231,189,99,.7)}
+.rp-rcard img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px;border:1px solid var(--color-secondary);margin-bottom:14px}
+.rp-rcard h3{font-size:1.2rem;margin:0 0 2px}
+.rp-rcard h3 a{color:inherit}
+.rp-rcard .rp-r{font-style:italic;color:var(--color-accent);font-size:.9rem;margin:0 0 8px}
+.rp-rcard p.rp-t{font-size:.92rem;color:var(--color-text-light);margin:0 0 12px;flex:1}
+.rp-rcard .rp-chips{margin-bottom:14px}
+.rp-rcard .rp-chips li{font-size:.7rem;padding:3px 9px}
+.rp-link{display:inline-flex;align-items:center;justify-content:center;min-height:44px;border-radius:999px;background:#0b3437;color:#fff !important;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;border:2px solid #0b3437;padding:8px 14px}
+.rp-link:hover{background:#061419;border-color:var(--color-secondary);color:var(--color-secondary) !important}
+
+@media(max-width:1000px){.rp-cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:820px){
+  .rp-hero-grid{grid-template-columns:1fr;gap:26px;text-align:center;justify-items:center}
+  .rp-avatar{width:200px;height:200px}
+  .rp-actions,.rp-chips{justify-content:center}
+  .rp-eyebrow::before{display:none}
+  .rp-two,.rp-two.flip{grid-template-columns:1fr;gap:28px}
+  .rp-section{padding:44px 0}
+}
+@media(max-width:560px){.rp-cards{grid-template-columns:1fr}.rp-wrap{padding:0 18px}.rp-actions .btn{width:100%;justify-content:center;text-align:center;white-space:normal}}
+
+/* кнопки: глобальні правила теми для посилань перекривали колір тексту */
+.rp-main .btn-primary,.rp-main .btn-primary:hover{color:#fff !important}
+.rp-main .btn-outline{color:var(--color-primary) !important}
+.rp-main .btn-outline:hover{color:#fff !important}
+.rp-ai-band .btn-primary{background:#e7bd63;border-color:#e7bd63;color:#061419 !important}
+.rp-ai-band .btn-primary:hover{background:#f0ca77;border-color:#f0ca77;color:#061419 !important}

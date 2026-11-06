@@ -1,0 +1,213 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) exit;
+define( 'PRON_VERSION', '2.0.0' );
+define( 'PRON_DIR', get_template_directory() );
+define( 'PRON_URI', get_template_directory_uri() );
+
+function pron_setup() {
+    add_theme_support( 'title-tag' );
+    add_theme_support( 'post-thumbnails' );
+    add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'style', 'script' ) );
+    add_theme_support( 'custom-logo', array( 'height' => 40, 'width' => 200, 'flex-height' => true, 'flex-width' => true ) );
+    add_theme_support( 'customize-selective-refresh-widgets' );
+    register_nav_menus( array( 'primary' => __( 'Primary Menu', 'pron-theme' ), 'footer' => __( 'Footer Menu', 'pron-theme' ) ) );
+}
+add_action( 'after_setup_theme', 'pron_setup' );
+
+function pron_enqueue_assets() {
+    wp_enqueue_style( 'pron-fonts', 'https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;600;700&family=Fira+Sans:wght@300;400;500;600;700&display=swap', array(), null );
+    wp_enqueue_style( 'pron-style', get_stylesheet_uri(), array( 'pron-fonts' ), PRON_VERSION );
+    wp_enqueue_script( 'pron-nav', PRON_URI . '/assets/js/navigation.js', array(), PRON_VERSION, true );
+}
+add_action( 'wp_enqueue_scripts', 'pron_enqueue_assets' );
+
+function pron_widgets_init() {
+    register_sidebar( array( 'name' => __( 'Sidebar', 'pron-theme' ), 'id' => 'pron-sidebar', 'before_widget' => '<div id="%1$s" class="widget %2$s">', 'after_widget' => '</div>', 'before_title' => '<h3 class="widget-title">', 'after_title' => '</h3>' ) );
+    register_sidebar( array( 'name' => __( 'Footer Widgets', 'pron-theme' ), 'id' => 'footer-1', 'before_widget' => '<div id="%1$s" class="footer-widget %2$s">', 'after_widget' => '</div>', 'before_title' => '<h4 style="color:rgba(255,255,255,.5)!important;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px;">', 'after_title' => '</h4>' ) );
+}
+add_action( 'widgets_init', 'pron_widgets_init' );
+
+function pron_excerpt_length( $length ) { return 24; }
+add_filter( 'excerpt_length', 'pron_excerpt_length' );
+function pron_excerpt_more( $more ) { return '&hellip;'; }
+add_filter( 'excerpt_more', 'pron_excerpt_more' );
+
+require_once PRON_DIR . '/inc/template-tags.php';
+require_once PRON_DIR . '/inc/customizer.php';
+
+// --- wp-net-control: home SEO title override (no SEO plugin detected) ---
+add_filter('pre_get_document_title', function($title) {
+    if (is_front_page() || is_home()) {
+        return 'Psychic Reading Online | Live & Accurate Psychic Advice';
+    }
+    return $title;
+}, 99);
+// --- end wp-net-control ---
+
+/**
+ * Return true when post content opens with the same image used as its featured image.
+ * Handles Gutenberg/classic markup and resized WordPress image URLs.
+ */
+function pron_content_starts_with_featured_image( $content, $thumbnail_id ) {
+    if ( ! $thumbnail_id || ! is_string( $content ) ) {
+        return false;
+    }
+
+    $content = preg_replace( '/^\s*(?:<!--.*?-->\s*)*/s', '', $content );
+    if ( ! preg_match( '/^(?:<(?:figure|p)\b[^>]*>\s*)*(?:<a\b[^>]*>\s*)?<img\b[^>]*>/i', $content, $match ) ) {
+        return false;
+    }
+
+    $image_tag = $match[0];
+    if ( preg_match( '/\bwp-image-' . preg_quote( (string) $thumbnail_id, '/' ) . '\b/', $image_tag ) ) {
+        return true;
+    }
+
+    if ( ! preg_match( '/\bsrc=["\']([^"\']+)["\']/i', $image_tag, $src_match ) ) {
+        return false;
+    }
+
+    $content_src = html_entity_decode( $src_match[1], ENT_QUOTES, 'UTF-8' );
+    if ( attachment_url_to_postid( $content_src ) === (int) $thumbnail_id ) {
+        return true;
+    }
+
+    $featured_src = wp_get_attachment_url( $thumbnail_id );
+    if ( ! $featured_src ) {
+        return false;
+    }
+
+    $normalise_filename = static function ( $url ) {
+        $path = (string) wp_parse_url( $url, PHP_URL_PATH );
+        return preg_replace( '/-\d+x\d+(?=\.[^.]+$)/', '', rawurldecode( basename( $path ) ) );
+    };
+
+    return $normalise_filename( $content_src ) === $normalise_filename( $featured_src );
+}
+
+/**
+ * Get a useful card image even when a post has no featured image assigned.
+ */
+function pron_post_card_image_url( $post_id, $size = 'medium_large' ) {
+    $thumbnail = get_the_post_thumbnail_url( $post_id, $size );
+    if ( $thumbnail ) {
+        return $thumbnail;
+    }
+
+    $content = (string) get_post_field( 'post_content', $post_id );
+    if ( preg_match( '/<img\b[^>]*\bsrc=["\']([^"\']+)["\']/i', $content, $match ) ) {
+        return html_entity_decode( $match[1], ENT_QUOTES, 'UTF-8' );
+    }
+
+    return PRON_URI . '/assets/img/about-section.webp';
+}
+
+/**
+ * Repair stale calls to action and reader portraits stored in core page content.
+ */
+function pron_repair_core_page_content( $content ) {
+    if ( ! is_page() || ! in_the_loop() || ! is_main_query() ) {
+        return $content;
+    }
+
+    if ( is_page( 'book-a-reading' ) ) {
+        $booking_cta_url = 'https://asknebula.com/flow/lp/simple-simple-registration/quiz/gender?utm_source=reddit&utm_medium=share&utm_campaign=join_lp1';
+        $booking_button = sprintf(
+            '<a class="cta-button btn btn-primary" href="%s" rel="nofollow sponsored" style="background:#103f42;color:#fff;">Start Reading &rarr;</a>',
+            esc_url( $booking_cta_url )
+        );
+        $content = preg_replace(
+            '/<a\b[^>]*>\s*(?:Confirm Booking|Request Booking by Email)[^<]*<\/a>/iu',
+            $booking_button,
+            $content
+        );
+        if ( false === strpos( $content, 'booking-cta-intro' ) ) {
+            $content = preg_replace( '/<\/p>/i', '</p><p class="booking-cta-intro">' . $booking_button . '</p>', $content, 1 );
+        }
+    }
+
+    if ( is_page( 'our-readers' ) ) {
+        $content = str_replace( 'href="/book-a-session/"', 'href="' . esc_url( home_url( '/book-a-reading/' ) ) . '"', $content );
+
+        $reading_counts = array(
+            '5,200+ readings' => '2,600+ readings',
+            '3,800+ readings' => '1,900+ readings',
+            '3,200+ readings' => '1,600+ readings',
+            '6,100+ readings' => '3,000+ readings',
+        );
+        $content = str_replace( array_keys( $reading_counts ), array_values( $reading_counts ), $content );
+
+        $readers = array(
+            array( 'name' => 'Isabelle Monroe', 'image' => 'reader-isabelle.webp' ),
+            array( 'name' => 'Nathan Cross', 'image' => 'reader-nathan.webp' ),
+            array( 'name' => 'Diana Vasquez', 'image' => 'reader-diana.webp' ),
+            array( 'name' => 'Graham Ellis', 'image' => 'reader-graham.webp' ),
+        );
+        $reader_index = 0;
+        $content = preg_replace_callback(
+            '/(<div\s+class=(["\'])reader-profile\2[^>]*>)(.*?)(?=<div\s+class=(["\'])reader-profile\4|<\/section>)/is',
+            static function ( $match ) use ( $readers, &$reader_index ) {
+                if ( ! isset( $readers[ $reader_index ] ) ) {
+                    return $match[0];
+                }
+
+                $reader = $readers[ $reader_index++ ];
+                $image_url = PRON_URI . '/assets/img/' . $reader['image'];
+                $body = $match[3];
+
+                if ( preg_match( '/<img\b/i', $body ) ) {
+                    $body = preg_replace_callback(
+                        '/<img\b[^>]*>/i',
+                        static function ( $image_match ) use ( $image_url, $reader ) {
+                            $tag = preg_replace( '/\bsrc=(["\']).*?\1/i', 'src="' . esc_url( $image_url ) . '"', $image_match[0] );
+                            if ( preg_match( '/\balt=(["\']).*?\1/i', $tag ) ) {
+                                return preg_replace( '/\balt=(["\']).*?\1/i', 'alt="' . esc_attr( $reader['name'] ) . '"', $tag );
+                            }
+                            return preg_replace( '/\s*\/?\>$/', ' alt="' . esc_attr( $reader['name'] ) . '">', $tag );
+                        },
+                        $body,
+                        1
+                    );
+                } else {
+                    $body = sprintf(
+                        '<div class="reader-profile-photo"><img src="%s" alt="%s" loading="lazy"></div>%s',
+                        esc_url( $image_url ),
+                        esc_attr( $reader['name'] ),
+                        $body
+                    );
+                }
+
+                return $match[1] . $body;
+            },
+            $content
+        );
+    }
+
+    if ( is_page( 'contact' ) ) {
+        $content = str_replace(
+            'Use the form below or the email address further down',
+            'Email us directly at support@psychic-reading-online.net',
+            $content
+        );
+        $email_cta = '<div class="contact-email-cta"><a class="btn btn-primary" href="mailto:support@psychic-reading-online.net?subject=Website%20enquiry">Email Support</a></div>';
+        $content = preg_replace( '/<\/p>/i', '</p>' . $email_cta, $content, 1 );
+    }
+
+    return $content;
+}
+add_filter( 'the_content', 'pron_repair_core_page_content', 20 );
+
+/** Keep empty author archives out of search results and WordPress sitemaps. */
+function pron_noindex_author_archives( $robots ) {
+    if ( is_author() ) {
+        $robots['noindex'] = true;
+        $robots['follow'] = true;
+    }
+    return $robots;
+}
+add_filter( 'wp_robots', 'pron_noindex_author_archives' );
+
+function pron_remove_user_sitemap_provider( $provider, $name ) {
+    return 'users' === $name ? false : $provider;
+}
+add_filter( 'wp_sitemaps_add_provider', 'pron_remove_user_sitemap_provider', 10, 2 );
